@@ -1,0 +1,12 @@
+
+.p-t-lg {
+ padding:30px
+}
+
+.gray-bg{
+	background: #eee;
+}
+
+.pagination li a{
+	cursor: pointer;
+}
