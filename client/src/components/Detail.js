@@ -15,7 +15,7 @@ class Detail extends Component {
         if(this.props && this.props.history && this.props.history.location && this.props.history.location.state && this.props.history.location.state.id){
             var id  = this.props.history.location.state.id
             this.props.getGuardianDetail(id);
-            setTimeout(() => {  this.setState({loading: false})  },1000)
+            setTimeout(() => {  this.setState({loading: false})  },1500)
         }
     }
     goToListPage = () => {
@@ -30,23 +30,23 @@ class Detail extends Component {
              <div className="container">
                 <div className="gray-bg p-t-lg ">
                     {guardiansDetail  && !this.state.loading ?
-                        <div class="card">
-                          <div class="card-header">
+                        <div className="card">
+                          <div className="card-header">
                             {guardiansDetail.webTitle}
                           </div>
-                          <div class="card-body">
-                            <p class="card-text"><b> Id </b> :  {guardiansDetail.id} </p>
-                            <h5 class="card-title"><b> Pillar Name</b> : {guardiansDetail.pillarName}</h5>
-                            <p class="card-text"><b> Pillar Name</b> :  {guardiansDetail.type} </p>
-                            <p class="card-text"><b> Section Id </b> :  {guardiansDetail.sectionId} </p>
-                            <p class="card-text"><b> Section Name </b> :  {guardiansDetail.sectionName} </p>
-                            <p class="card-text"><b> Publication Date </b> :  {guardiansDetail.webPublicationDate} </p>
-                            <p class="card-text"><b> Web Url </b> :  {guardiansDetail.webUrl} </p>
-                            <p class="card-text"><b> Api Url </b> :  {guardiansDetail.apiUrl} </p>
-                            <p class="card-text"><b> Pillar Id </b> :  {guardiansDetail.pillarId} </p>
-                            <p class="card-text"><b> Pillar Name </b> :  {guardiansDetail.pillarName} </p>
+                          <div className="card-body">
+                            <p className="card-text"><b> Id </b> :  {guardiansDetail.id} </p>
+                            <h5 className="card-title"><b> Pillar Name</b> : {guardiansDetail.pillarName}</h5>
+                            <p className="card-text"><b> Pillar Name</b> :  {guardiansDetail.type} </p>
+                            <p className="card-text"><b> Section Id </b> :  {guardiansDetail.sectionId} </p>
+                            <p className="card-text"><b> Section Name </b> :  {guardiansDetail.sectionName} </p>
+                            <p className="card-text"><b> Publication Date </b> :  {guardiansDetail.webPublicationDate} </p>
+                            <p className="card-text"><b> Web Url </b> :  {guardiansDetail.webUrl} </p>
+                            <p className="card-text"><b> Api Url </b> :  {guardiansDetail.apiUrl} </p>
+                            <p className="card-text"><b> Pillar Id </b> :  {guardiansDetail.pillarId} </p>
+                            <p className="card-text"><b> Pillar Name </b> :  {guardiansDetail.pillarName} </p>
                           </div>
-                          <div class="card-footer text-muted">
+                          <div className="card-footer text-muted">
                             <button type="button" className="btn btn-outline-primary" onClick={(e)=> this.goToListPage() } >Go Back</button>
                           </div>
                         </div>

@@ -1,11 +1,17 @@
 const express = require('express');
 const axios = require('axios');
 const router = express.Router();
-const apyKey =  'daa37865-8c63-408a-a6c4-545971fd29d6'
+require('dotenv').config()
 
-router.get('/getguardianlist/:index', (req, res) => {
-  var pageIndex =req.params.index;
-  console.log("RRRRRRRRR", pageIndex)
+const apyKey =  process.env.APIKEY
+
+/*
+ * This function is used to get list of all guardian
+ * @param taking {string} pageIndex  to page index
+ * @param return {Array} of all gurdian  
+ */
+router.get('/getguardianlist/:pageIndex', (req, res) => {
+  var pageIndex =req.params.pageIndex;
    return axios.get('https://content.guardianapis.com/search', {
           params: {'api-key': apyKey, 'page':pageIndex}
     }).then((response)=>{
@@ -16,6 +22,11 @@ router.get('/getguardianlist/:index', (req, res) => {
     });
 });
 
+/*
+ * This function is used to get detail of guardian
+ * @param taking {string} id of gurgaina
+ * @param return {object} of selected gurgaian  
+ */
 router.get('/getguardiandetail/:id', (req, res) => {
     var id = req.params.id;
     var convertedUrl = id.replace(/_/g, '/');

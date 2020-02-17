@@ -21,7 +21,8 @@ class Home extends Component {
     }
     componentDidMount() {
         this.props.getGuardianList(this.state.pageIndex)
-        setTimeout(() => {  this.setState({loading: false})  },1000)
+        setTimeout(() => {  this.setState({loading: false})  }, 1000)
+
     }
     handleChange = (e) => {
       this.setState({selectValue:e.target.value});
@@ -74,13 +75,13 @@ class Home extends Component {
                     <div className="row">
                         <div className="col-sm-12 col-md-6">
                             <div className="form-group">
-                             <label for="usr">Search:</label>
+                             <label htmlFor="usr">Search:</label>
                              <input type="text" className="form-control"  onKeyUp={this.handleKeyUp} />
                             </div>
                         </div>
                       <div className="col-sm-12 col-md-6">
                       <div className="form-group">
-                            <label for="sel1">Sort By:</label>
+                            <label htmlFor="sort">Sort By:</label>
                               <select  className="form-control" value={this.state.selectValue}  onChange={this.handleChange} >
                                 <option value="Select">Select</option>
                                 <option value="newest">Newest</option>
@@ -124,9 +125,9 @@ class Home extends Component {
                               <span className="sr-only">Loading...</span>
                             </div>
                         </div>
-                        
+
                     }
-                  {guardianlist.length > 0 &&
+                  {guardianlist.length > 0 && !this.state.loading &&
                     <nav aria-label="Page navigation example">
                       <ul className="pagination justify-content-end">
                         <li className="page-item ">

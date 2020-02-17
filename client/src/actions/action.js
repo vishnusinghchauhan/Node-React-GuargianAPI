@@ -4,13 +4,9 @@ import {GET_GUARDIANLIST, GET_GUARDIANDETAIL, GET_GUARDIANSEARCH, GET_GUARDIANSD
 //const apyKey =  'daa37865-8c63-408a-a6c4-545971fd29d6'
 export const getGuardianList = (pageIndex) => dispatch => {
   return new Promise((resolve, reject) => {
-      console.log("getGuardianList callinf")
+      console.log("getGuardianList calling")
       axios.get(`/api/getguardianlist/${pageIndex}`).then((res)=>{
-          dispatch({
-              type: GET_GUARDIANLIST,
-              payload: res.data
-          });
-          this.setState({loading:false})
+          dispatch({  type: GET_GUARDIANLIST, payload: res.data  });
       }).catch(err => {
           console.log(err)
       });
@@ -34,10 +30,7 @@ export const getGuardianDetail = (id) => dispatch => {
       var convertedUrl = id.replace(/\//g, "_");
       console.log("getGuardianDetail calling", convertedUrl)
       axios.get(`/api/getguardiandetail/${convertedUrl}`).then((res)=>{
-          dispatch({
-              type: GET_GUARDIANDETAIL,
-              payload: res.data
-          });
+          dispatch({  type: GET_GUARDIANDETAIL,  payload: res.data  });
       }).catch(err => {
           console.log(err)
       });
@@ -60,19 +53,13 @@ export const getGuardianDetail = (id) => dispatch => {
 export const getGuardianSearchList = (searchValue) => dispatch => {
   return new Promise((resolve, reject) => {
     console.log("getGuardianSearchList calling", searchValue)
-    dispatch({
-          type: GET_GUARDIANSEARCH,
-          payload: searchValue
-    });
+    dispatch({  type: GET_GUARDIANSEARCH,  payload: searchValue });
   });
 };
 
 export const gerGuardianByDate = (filterType) => dispatch => {
   return new Promise((resolve, reject) => {
     console.log("gerGuardianByDate calling", filterType)
-      dispatch({
-            type: GET_GUARDIANSDATESEARCH,
-            payload: filterType
-      });
+      dispatch({  type: GET_GUARDIANSDATESEARCH,  payload: filterType });
   });
 };
