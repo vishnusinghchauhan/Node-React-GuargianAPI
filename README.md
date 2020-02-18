@@ -2,9 +2,9 @@
 
 Steps
 
-1) https://github.com/vishnusinghchauhan/Node-React-GuargianAPI.git
-2) cd client
-3) npm install
-4) cd ..
-5) npm install
-6) npm run dev
+1) git clone https://github.com/vishnusinghchauhan/Node-React-GuargianAPI.git
+2) cd client  // go to client directory
+3) npm install // install client dependency
+4) cd .. // go to root directory
+5) npm install // install server dependenct
+6) npm run dev  // start server
