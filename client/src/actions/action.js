@@ -2,6 +2,11 @@ import axios from "axios";
 import {GET_GUARDIANLIST, GET_GUARDIANDETAIL, GET_GUARDIANSEARCH, GET_GUARDIANSDATESEARCH} from "./types";
 
 //const apyKey =  'daa37865-8c63-408a-a6c4-545971fd29d6'
+
+
+/*
+ * This function is used to call API of guardian list and dispatch list to redux store
+ */
 export const getGuardianList = (pageIndex) => dispatch => {
   return new Promise((resolve, reject) => {
       console.log("getGuardianList calling")
@@ -25,6 +30,9 @@ export const getGuardianList = (pageIndex) => dispatch => {
   });
 };
 
+/*
+ * This function is used to call API of guardian detail and dispatch pertucular gaurdian detail to redux store
+ */
 export const getGuardianDetail = (id) => dispatch => {
   return new Promise((resolve, reject) => {
       var convertedUrl = id.replace(/\//g, "_");
@@ -34,7 +42,6 @@ export const getGuardianDetail = (id) => dispatch => {
       }).catch(err => {
           console.log(err)
       });
-
       // axios.get(`https://content.guardianapis.com/${id}`,{
       //     params: {'api-key': apyKey}
       // }).then((res)=>{
@@ -50,6 +57,9 @@ export const getGuardianDetail = (id) => dispatch => {
   });
 };
 
+/*
+ * This function is used to search data from redux store according to user search input
+ */
 export const getGuardianSearchList = (searchValue) => dispatch => {
   return new Promise((resolve, reject) => {
     console.log("getGuardianSearchList calling", searchValue)
@@ -57,6 +67,10 @@ export const getGuardianSearchList = (searchValue) => dispatch => {
   });
 };
 
+
+/*
+ * This function is used to sort data from redux store according newest publication date and oldest publication date
+ */
 export const gerGuardianByDate = (filterType) => dispatch => {
   return new Promise((resolve, reject) => {
     console.log("gerGuardianByDate calling", filterType)

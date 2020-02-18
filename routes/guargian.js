@@ -7,7 +7,7 @@ const apyKey =  process.env.APIKEY
 
 /*
  * This function is used to get list of all guardian
- * @param taking {string} pageIndex  to page index
+ * @param taking {number} pageIndex  to page index
  * @param return {Array} of all gurdian  
  */
 router.get('/getguardianlist/:pageIndex', (req, res) => {

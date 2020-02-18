@@ -22,6 +22,7 @@
     "axios": "^0.19.2",
     "concurrently": "^5.1.0",
     "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
     "nodemon": "^2.0.2",
     "react-bootstrap": "^1.0.0-beta.16",
     "react-redux": "^7.1.3",
